@@ -17,8 +17,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // ROUTES //
 
-app.get('/estimate', function(req, res) {
-	res.sendFile(__dirname + '/estimate.html');
+app.get('/', function(req, res) {
+	res.sendFile(__dirname + '/views/index.html');
 });
 
 app.post('/uberPrice', function(req, res) {
