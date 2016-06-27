@@ -80,3 +80,19 @@ function renderGoogleMap(originCoord, destinCoord) {
         }
     });
 }
+
+function getRidePrices(origin, destination){
+    var coordinates = {};
+    coordinates.lat1 = origin.lat;
+    coordinates.lng1 = origin.lng;
+    coordinates.lat2 = destination.lat;
+    coordinates.lng2 = destination.lng;
+    $.post('/uberPrice', {coordinates: coordinates}, function(data){
+        var rides = data.prices;
+        $.each( rides, function( i, ride ) {
+            var newListItem = ("<tr><td>" + ride.display_name + "</td><td>" + ride.estimate + "</td></tr>");
+            $( "#estimates" ).append( newListItem );
+        });
+
+    });
+};
