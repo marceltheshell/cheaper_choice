@@ -1,6 +1,6 @@
 {
-  "name": "Name_here",
-  "main": "index.js",
+  "name": "cheaper_choice",
+  "main": "server.js",
   "version": "0.0.0",
   "authors": "Marcel Degas",
   "license": "MIT",

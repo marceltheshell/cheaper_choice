@@ -1,7 +1,7 @@
 {
-  "name": "Name_here",
+  "name": "cheaper_choice",
   "version": "1.0.0",
-  "description": "Description_here",
+  "description": "An app which allows input two addresses and see a real-time Uber estimate for the ride as well as a route.",
   "main": "index.js",
   "authors": [
     "Marcel Degas <marcel.degas@gmail.com>"
@@ -14,11 +14,11 @@
   "scripts": {
     "start": "nodemon server.js"
   },
-
   "author": "Marcel Degas",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.12.4",
-    "express": "^4.12.3",
+    "dotenv": "^2.0.0",
+    "express": "^4.12.3"
   }
 }

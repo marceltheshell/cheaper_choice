@@ -4,6 +4,9 @@ var app = express();
 var path = require("path");
 var bodyParser = require("body-parser");
 var views = path.join(process.cwd(), "views/");
+require('dotenv').config();
+var uberServerToken = process.env.API_UBER
+Uber = require('uber-api')({server_token: uberServerToken, version:'v1'});
 
 // CONFIG //
 // serve js & css files
@@ -14,9 +17,27 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // ROUTES //
 
-app.get('/', function (req, res) {
-	var indexPath = path.join(views, "index.html");
-	res.sendFile(indexPath);
+app.get('/estimate', function(req, res) {
+	res.sendFile(__dirname + '/estimate.html');
+});
+
+app.post('/uberPrice', function(req, res) {
+	var coordinates = req.body;
+	var options = {
+				sLat:coordinates.coordinates.lat1,
+				sLng:coordinates.coordinates.lng1,
+				eLat:coordinates.coordinates.lat2,
+				eLng:coordinates.coordinates.lng2
+				};
+	
+	Uber.getPriceEstimate(options , function (error, response) {
+		if (error) {
+			console.log("the error is ", error);
+		} else {
+			res.send(response);
+		}
+
+    });
 });
 
 
