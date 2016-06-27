@@ -41,6 +41,6 @@ app.post('/uberPrice', function(req, res) {
 });
 
 
-app.listen(3000, function () {
+app.listen(process.env.PORT || 3000, function () {
 	console.log("the magic is happening on 3000");
 });
