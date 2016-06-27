@@ -2,7 +2,7 @@
   "name": "cheaper_choice",
   "version": "1.0.0",
   "description": "An app which allows input two addresses and see a real-time Uber estimate for the ride as well as a route.",
-  "main": "index.js",
+  "main": "server.js",
   "authors": [
     "Marcel Degas <marcel.degas@gmail.com>"
   ],
@@ -11,8 +11,13 @@
     "node_modules",
     "bower_components"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marceltheshell/cheaper_choice.git"
+  },
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js", 
+    "postinstall": "bower install"
   },
   "author": "Marcel Degas",
   "license": "ISC",
