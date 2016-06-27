@@ -48,3 +48,35 @@ function mapCoordinates(addressOne, addressTwo){
 
     });
 }
+
+
+function renderGoogleMap(originCoord, destinCoord) {
+    var directionsService = new google.maps.DirectionsService;
+    var directionsDisplay = new google.maps.DirectionsRenderer;
+    
+    $('#map').animate({'height':'384px'},2000, function(){    
+        map = new google.maps.Map(document.getElementById("map"),{
+            center:
+              originCoord,
+              destinCoord,
+              zoom:13,
+              zoomControl: false,
+              scaleControl: false,
+              scrollwheel: false,
+              disableDoubleClickZoom: true
+        });
+        directionsDisplay.setMap(map);
+    });
+   
+    var request = {
+      origin:originCoord,
+      destination:destinCoord,
+      travelMode: google.maps.TravelMode.DRIVING   
+    };
+
+    directionsService.route(request, function(result, status) {
+        if (status == google.maps.DirectionsStatus.OK) {
+            directionsDisplay.setDirections(result);
+        }
+    });
+}
