@@ -12,3 +12,13 @@ body {
 tr td {
 	padding: 0 2vw 0 2vw;
 }
+
+.element {
+	font-size: 5em;
+	display: inline;
+}
+	
+header {
+	margin-top: 2vh;
+	margin-bottom: 2vh;
+}

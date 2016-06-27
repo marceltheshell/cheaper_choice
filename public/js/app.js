@@ -16,6 +16,12 @@ $('document').ready(function() {
         destination = address[1].value;
         mapCoordinates(origin, destination);
     });
+    $(function(){
+      $(".element").typed({
+        strings: ["Enter your start and end address for an Uber price estimate"],
+        typeSpeed: 0
+      });
+  });
 })
 
 
