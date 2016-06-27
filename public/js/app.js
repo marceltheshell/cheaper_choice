@@ -60,7 +60,7 @@ function renderGoogleMap(originCoord, destinCoord) {
     var directionsService = new google.maps.DirectionsService;
     var directionsDisplay = new google.maps.DirectionsRenderer;
     
-    $('#map').animate({'height':'384px'},2000, function(){    
+    $('#map').animate({'height':'400px'},2000, function(){    
         map = new google.maps.Map(document.getElementById("map"),{
             center:
               originCoord,
@@ -95,6 +95,8 @@ function getRidePrices(origin, destination){
     coordinates.lng2 = destination.lng;
     $.post('/uberPrice', {coordinates: coordinates}, function(data){
         var rides = data.prices;
+        var currentTime = getTime();
+        $( "#estimates" ).append( currentTime );
         $.each( rides, function( i, ride ) {
             var newListItem = ("<tr><td>" + ride.display_name + "</td><td>" + ride.estimate + "</td></tr>");
             $( "#estimates" ).append( newListItem );
@@ -102,3 +104,16 @@ function getRidePrices(origin, destination){
 
     });
 };
+
+function getTime() {
+	var currentDate = new Date();
+	var h = currentDate.getHours();
+	var m =  currentDate.getMinutes();
+	var amPm = "am";
+	if ( h > 12 ) {
+		h = h - 12;
+		amPm = "pm";
+	}
+	return ("Current time: " + h + ":" + m + amPm );
+}
+

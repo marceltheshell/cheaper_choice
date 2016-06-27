@@ -19,29 +19,29 @@
     <header>
       <h3 class="element"></h3>
     </header>
-    <div>
+    <div class="input-container row">
       <form class="findPrice">
-        <div class="form-group row">
-          <div class="col-sm-6">
+        <div class="col-sm-6 col-xs-12">
+          <div class="form-group row">
             <input id="start" type="text" name="start" class="form-control" placeholder="Start Address">
           </div>
-        </div>
 
-        <div class="form-group row">
-          <div class="col-sm-6">
+          <div class="form-group row">
             <input id="end" type="text" name="end" class="form-control" placeholder="End Address">
           </div>
         </div>
 
-        <div class="form-group row">
-          <div class='col-sm-3'>
-            <button class="btn" type="submit" name="submit">Get Estimate</button>
-          </div>  
-        </div>
+        <div class="button-container col-sm-6 col-xs-12">
+          <div class='col-sm-6'>
+            <button class="btn btn-lg" type="submit" name="submit">Get Estimate</button>
+          </div> 
+        </div> 
       </form>
     </div>
-    <div id="estimates"></div>
-    <div id="map"></div>
+    <div class="results-container row">
+      <div id="estimates" class="col-sm-6 col-xs-12"></div>
+      <div id="map" class="col-sm-6 col-xs-12"></div>
+    </div>
   </div>
 </body>
 </html>

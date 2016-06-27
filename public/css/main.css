@@ -8,17 +8,40 @@ body {
 	font-family: 'Raleway', sans-serif;
 }
 
-
 tr td {
 	padding: 0 2vw 0 2vw;
 }
 
+header {
+	margin-top: 5vh;
+	margin-bottom: 5vh;
+}
+
 .element {
-	font-size: 5em;
+	font-size: 6em;
 	display: inline;
 }
 	
-header {
-	margin-top: 2vh;
-	margin-bottom: 2vh;
+.button-container {
+	display: flex; 
+	justify-content: center;
+	margin-top: 2.5vh;
 }
+
+.input-container {
+	margin-bottom: 5vh;
+}
+
+#estimates {
+	font-size: 4em;
+}
+
+#map {
+	overflow: hidden;
+	border-radius: 9px;
+	padding: 20px;
+}
+
+
+
+
