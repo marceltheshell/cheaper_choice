@@ -18,6 +18,7 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.12.2",
+    "bower": "^1.7.9",
     "dotenv": "^2.0.0",
     "express": "^4.12.3",
     "uber-api": "^0.3.3"
