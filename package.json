@@ -3,9 +3,18 @@
   "version": "1.0.0",
   "description": "Description_here",
   "main": "index.js",
+  "authors": [
+    "Marcel Degas <marcel.degas@gmail.com>"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon server.js"
   },
+
   "author": "Marcel Degas",
   "license": "ISC",
   "dependencies": {
