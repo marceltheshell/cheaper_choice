@@ -5,4 +5,10 @@ body {
 	padding:0;
 	font-size: 65%;
 	color:#fff;
+	font-family: 'Raleway', sans-serif;
+}
+
+
+tr td {
+	padding: 0 2vw 0 2vw;
 }
