@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en-us" ng-app='cheaperChoice'>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,38 +11,18 @@
   <link rel="stylesheet" href="/static/css/typed.js.css">
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcAMzGs3-EfpHVMmFjUJvPrX02QIjug0A&libraries=places"></script>
   <script src="/vendor/jquery/dist/jquery.min.js"></script>
+  <script src="/vendor/angular/angular.js"></script>
+  <script src="/vendor/angular-ui-router/release/angular-ui-router.js"></script>
   <script src="/vendor/typed.js/dist/typed.min.js"></script>
+  <script src="/static/js/angularApp.js"></script>
   <script src="/static/js/app.js"></script>
-
+  <script src="/static/js/services.js"></script>
+  <script src="/static/js/controllers.js"></script>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h3 class="element"></h3>
-    </header>
-    <div class="input-container row">
-      <form class="findPrice">
-        <div class="col-sm-6 col-xs-12">
-          <div class="form-group row">
-            <input id="start" type="text" name="start" class="form-control" placeholder="Start Address">
-          </div>
-
-          <div class="form-group row">
-            <input id="end" type="text" name="end" class="form-control" placeholder="End Address">
-          </div>
-        </div>
-
-        <div class="button-container col-sm-6 col-xs-12">
-          <div class='col-sm-6'>
-            <button class="btn btn-lg" type="submit" name="submit">Get Estimate</button>
-          </div> 
-        </div> 
-      </form>
-    </div>
-    <div class="results-container row">
-      <div id="estimates" class="col-sm-6 col-xs-12"></div>
-      <div id="map" class="col-sm-6 col-xs-12"></div>
-    </div>
-  </div>
+  <header>
+    <h3 class="element"></h3>
+  </header>
+  <div ui-view></div> 
 </body>
 </html>

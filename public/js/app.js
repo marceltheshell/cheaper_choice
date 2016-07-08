@@ -96,7 +96,7 @@ function getRidePrices(origin, destination){
   $.post('/uberPrice', {coordinates: coordinates}, function(data){
     var rides = data.prices;
     var htmlString = '';
-    var currentTime = getTime();
+    var currentTime = getCurrentTime();
     htmlString += "<tr><td>" + currentTime + "</td></tr>" + "\n";
     $.each( rides, function( i, ride ) {
       newListItem = "<tr><td>" + ride.display_name + "</td><td>" + ride.estimate + "</td></tr>" + "\n";
@@ -107,7 +107,7 @@ function getRidePrices(origin, destination){
   });
 };
 
-function getTime() {
+function getCurrentTime() {
 	var currentDate = new Date();
 	var h = currentDate.getHours();
 	var m =  currentDate.getMinutes();
